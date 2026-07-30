@@ -28,3 +28,9 @@ output "subnet_address_prefix" {
   description = "Address prefix computed for the app subnet."
   value       = one(azurerm_subnet.app.address_prefixes)
 }
+
+output "vm_admin_password" {
+  description = "Admin password, redacted in output but present in state."
+  value       = data.azurerm_key_vault_secret.vm_admin_password.value
+  sensitive   = true
+}

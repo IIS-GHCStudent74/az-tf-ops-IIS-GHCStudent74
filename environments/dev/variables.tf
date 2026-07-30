@@ -107,3 +107,14 @@ variable "storage_containers" {
     "orders-logs" = { access_type = "private" }
   }
 }
+
+variable "key_vault_name" {
+  description = "Name of the Key Vault holding this environment's secrets."
+  type        = string
+}
+
+variable "key_vault_resource_group_name" {
+  description = "Resource group containing the Key Vault. Owned by the security team."
+  type        = string
+  default     = "rg-summit-security"
+}
